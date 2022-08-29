@@ -2,10 +2,12 @@ import { AiFillAlipayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 import { Loader } from ".";
+import { useState } from "react";
 
 const Welcome = () => {
-  const connectWallet = () => {};
+  const [isLoading, setIsLoading] = useState(false);
 
+  const connectWallet = () => {};
   const handleSubmit = () => {};
   const handleChange = () => {};
 
@@ -73,9 +75,10 @@ const Welcome = () => {
                 <BsInfoCircle fontSize={17} color="#fff" />
               </div>
               <div>
-                {/* <p className="text-white font-light text-sm">
-                  {shortenAddress(currentAccount)}
-                </p> */}
+                <p className="text-white font-light text-sm">
+                  0xfcc...678C4
+                  {/* {shortenAddress(currentAccount)} */}
+                </p>
                 <p className="text-white font-semibold text-lg mt-1">
                   Ethereum
                 </p>
@@ -110,7 +113,7 @@ const Welcome = () => {
 
             <div className="h-[1px] w-full bg-gray-400 my-2" />
 
-            {/* {isLoading ? (
+            {isLoading ? (
               <Loader />
             ) : (
               <button
@@ -120,7 +123,7 @@ const Welcome = () => {
               >
                 Send now
               </button>
-            )} */}
+            )}
           </div>
         </div>
       </div>
