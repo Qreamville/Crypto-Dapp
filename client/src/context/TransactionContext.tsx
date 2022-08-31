@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState, useContext } from "react";
 import { ethers } from "ethers";
 import { contractABI, contractAddress } from "../utils/constant";
-import { SiEthereum } from "react-icons/si";
 
 declare var window: any;
 interface IContext {
@@ -35,7 +34,6 @@ const getEthereumContract = () => {
 type Props = {
   children: JSX.Element;
 };
-
 
 const TransactionProvider = ({ children }: Props) => {
   const isWalletConnected = async () => {
