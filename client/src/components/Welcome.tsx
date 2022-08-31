@@ -5,12 +5,27 @@ import { Loader } from ".";
 import { useState } from "react";
 import { useGlobalContext } from "../context/TransactionContext";
 
+declare var window: any;
+
 const Welcome = () => {
   const { commonStyles } = useGlobalContext();
 
   const [isLoading, setIsLoading] = useState(false);
+  const [account, setAccount] = useState(null);
 
-  const connectWallet = () => {};
+  const connectWallet = async () => {
+    try {
+      if (!window.ethereum) return alert("Please install metamask");
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setAccount(accounts[0]);
+      console.log(accounts);
+      alert("connected");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleSubmit = () => {};
   const handleChange = () => {};
 
